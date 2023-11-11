@@ -1,19 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Container } from "react-bootstrap";
-import { Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
-import NewNote from "./components/NewNote";
-import { NoteData, RawNote, Tag } from "./types/allTypes";
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useMemo } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { Container } from "react-bootstrap";
 import { Toaster } from "react-hot-toast";
-import NoteList from "./components/NoteList";
-import NoteLayout from "./components/NoteLayout";
-import Note from "./components/Note";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import "./App.css";
 import EditNote from "./components/EditNote";
+import NewNote from "./components/NewNote";
+import Note from "./components/Note";
+import NoteLayout from "./components/NoteLayout";
+import NoteList from "./components/NoteList";
 import { defaultNotes, defaultTags } from "./components/defaultNotes";
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import { NoteData, RawNote, Tag } from "./types/allTypes";
 
 function App() {
   const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", defaultNotes);

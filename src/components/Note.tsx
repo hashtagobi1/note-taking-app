@@ -1,8 +1,8 @@
 import { Badge, Button, Col, Row, Stack } from "react-bootstrap";
+import toast from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import { Link, useNavigate } from "react-router-dom";
 import { useNote } from "./NoteLayout";
-import toast from "react-hot-toast";
 
 type NoteProps = {
   onDelete: (id: string) => void;

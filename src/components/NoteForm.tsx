@@ -1,10 +1,10 @@
 import { FC, FormEvent, useRef, useState } from "react";
 import { Button, Col, Form, Row, Stack } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import CreateableReactSelect from "react-select/creatable";
-import { NoteData, Tag } from "../types/allTypes";
 import { v4 as uuidv4 } from "uuid";
-import toast from "react-hot-toast";
+import { NoteData, Tag } from "../types/allTypes";
 
 type NoteFormProps = {
   onSubmit: (data: NoteData) => void;

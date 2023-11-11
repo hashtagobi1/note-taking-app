@@ -13,10 +13,11 @@ import NoteList from "./components/NoteList";
 import NoteLayout from "./components/NoteLayout";
 import Note from "./components/Note";
 import EditNote from "./components/EditNote";
+import { defaultNotes, defaultTags } from "./components/defaultNotes";
 
 function App() {
-  const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", []);
-  const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", []);
+  const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", defaultNotes);
+  const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", defaultTags);
 
   const notesWithTags = useMemo(() => {
     return notes.map((note) => {
@@ -78,7 +79,6 @@ function App() {
   return (
     <Container className="my-4">
       <Routes>
-        {/* <Route path="/" element={<h1>hi</h1>} /> */}
         <Route
           path="/"
           element={

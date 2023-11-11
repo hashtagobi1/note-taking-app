@@ -48,7 +48,7 @@ const NoteForm: FC<NoteFormProps> = ({
           </Col>
           <Col>
             <Form.Group controlId="tags">
-              <Form.Label>Tags</Form.Label>
+              <Form.Label>Categories</Form.Label>
               <CreateableReactSelect
                 onCreateOption={(label) => {
                   const newTag = { id: uuidv4(), label };

@@ -43,8 +43,6 @@ const NoteList = ({
   const [title, setTitle] = useState("");
   const [editTagsModalIsOpen, setEditTagsModalIsOpen] = useState(false);
 
-  // const allNotes: RawNote[] = JSON.parse(localStorage.getItem("NOTES" || "{}"));
-
   const filteredNotes = useMemo(() => {
     return notes.filter((note) => {
       return (
@@ -93,7 +91,7 @@ const NoteList = ({
 
             <Col>
               <Form.Group controlId="tags">
-                <Form.Label>Tags</Form.Label>
+                <Form.Label>Categories</Form.Label>
                 <ReactSelect
                   value={selectedTags.map((tag) => {
                     return { label: tag.label, value: tag.id };
@@ -144,7 +142,7 @@ const EditTagsModal = ({
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Tags</Modal.Title>
+        <Modal.Title>Edit Categories</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -159,7 +157,10 @@ const EditTagsModal = ({
                   />
                 </Col>
                 <Col xs="auto">
-                  <Button onClick={() => onDeleteTag(tag.id)} variant="outline-danger">
+                  <Button
+                    onClick={() => onDeleteTag(tag.id)}
+                    variant="outline-danger"
+                  >
                     &times;
                   </Button>
                 </Col>
